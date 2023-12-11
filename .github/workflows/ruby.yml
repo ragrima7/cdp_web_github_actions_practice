@@ -27,7 +27,7 @@ jobs:
 
     - name: Install and Compile Javascript with webpacker
       run: |
-        yarn install
+        yarn install --check-files --openssl-legacy-provider
         bundle exec rails webpacker:install
         bundle exec rails webpacker:compile
 
