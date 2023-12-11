@@ -6,9 +6,6 @@ on:
   pull_request:
     branches: [ master ]
 
-env:
-  NODE_OPTIONS: "--openssl-legacy-provider"
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -30,7 +27,7 @@ jobs:
 
     - name: Install and Compile Javascript with webpacker
       run: |
-        yarn install --check-files
+        yarn install
         bundle exec rails webpacker:install
         bundle exec rails webpacker:compile
 
